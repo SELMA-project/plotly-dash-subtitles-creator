@@ -7,10 +7,10 @@ import dash_html_components as html
 import dash_table
 from dash.dependencies import Output, Input, State, ALL
 from dash.exceptions import PreventUpdate
-from util import data_io
+from tilosutils import data_io
 
-from dash_app.app import app
-from dash_app.common import get_letters_csv, build_json_name
+from subtitles_app.app import app
+from subtitles_app.common import get_letters_csv, build_json_name
 from speech_to_text.create_subtitle_files import (
     TranslatedTranscript,
     segment_transcript_to_subtitle_blocks,

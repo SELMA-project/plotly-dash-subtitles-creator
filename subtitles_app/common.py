@@ -2,7 +2,7 @@ import json
 from pathlib import Path
 from typing import Dict
 
-from dash_app.updownload_app import APP_DATA_DIR, SUBTITLES_DIR
+from subtitles_app.updownload_app import APP_DATA_DIR, SUBTITLES_DIR
 from speech_to_text.create_subtitle_files import TranslatedTranscript
 
 LANGUAGE_TO_MODELNAME = {

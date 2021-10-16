@@ -2,15 +2,15 @@ import sys
 
 sys.path.append(".")
 
-from dash_app.main_page import page_content
-from dash_app.app import server, app
+from subtitles_app.main_page import page_content
+from subtitles_app.app import server, app
 
 import dash_core_components as dcc
 import dash_html_components as html
 from flask import send_from_directory
 import dash_bootstrap_components as dbc
 
-from dash_app.updownload_app import (
+from subtitles_app.updownload_app import (
     APP_DATA_DIR,
 )
 

@@ -6,12 +6,12 @@ import dash_bootstrap_components as dbc
 import dash_html_components as html
 from dash.dependencies import Output, Input, State
 from dash.exceptions import PreventUpdate
-from util import data_io
+from tilosutils import data_io
 
-from dash_app.app import app
-from dash_app.common import get_letters_csv, raw_transcript_name, get_store_data
-from dash_app.subtitles_table import process_button
-from dash_app.updownload_app import APP_DATA_DIR, SUBTITLES_DIR
+from subtitles_app.app import app
+from subtitles_app.common import get_letters_csv, raw_transcript_name, get_store_data
+from subtitles_app.subtitles_table import process_button
+from subtitles_app.updownload_app import APP_DATA_DIR, SUBTITLES_DIR
 from speech_to_text.create_subtitle_files import TranslatedTranscript
 from speech_to_text.subtitle_creation import convert_to_wav_transcribe
 from speech_to_text.transcribe_audio import SpeechToText

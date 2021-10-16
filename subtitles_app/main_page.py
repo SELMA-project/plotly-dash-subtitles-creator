@@ -7,17 +7,17 @@ import dash_core_components as dcc
 import dash_html_components as html
 from dash.dependencies import Output, Input, State
 from dash.exceptions import PreventUpdate
-from util import data_io
 
-from dash_app.app import app
-from dash_app.common import LANGUAGE_TO_MODELNAME, build_json_name
-from dash_app.subtitle_video_creation import burn_video_div
-from dash_app.transcript_text_areas import transcribe_button
-from dash_app.updownload_app import (
+from subtitles_app.app import app
+from subtitles_app.common import LANGUAGE_TO_MODELNAME, build_json_name
+from subtitles_app.subtitle_video_creation import burn_video_div
+from subtitles_app.transcript_text_areas import transcribe_button
+from subtitles_app.updownload_app import (
     save_file,
     uploaded_files,
     APP_DATA_DIR,
 )
+from tilosutils import data_io
 
 upload_data = "upload-data"
 video_file_dropdown = "video-file-dropdown"

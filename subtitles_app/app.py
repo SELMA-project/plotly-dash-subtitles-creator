@@ -2,7 +2,8 @@ import dash
 import dash_auth
 import dash_bootstrap_components as dbc
 from flask import Flask
-from util import data_io
+
+from tilosutils import data_io
 
 VALID_USERNAME_PASSWORD_PAIRS = {
     d["login"]: d["password"] for d in data_io.read_jsonl("credentials.jsonl")

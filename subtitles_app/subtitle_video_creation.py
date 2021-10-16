@@ -8,9 +8,9 @@ import dash_html_components as html
 from dash.dependencies import Input, Output, State
 from dash.exceptions import PreventUpdate
 
-from dash_app.app import app
-from dash_app.common import get_store_data
-from dash_app.updownload_app import APP_DATA_DIR
+from subtitles_app.app import app
+from subtitles_app.common import get_store_data
+from subtitles_app.updownload_app import APP_DATA_DIR
 from speech_to_text.create_subtitle_files import (
     create_ass_file,
     SubtitleBlock,
