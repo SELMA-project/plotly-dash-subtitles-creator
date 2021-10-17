@@ -6,8 +6,8 @@ import dash_bootstrap_components as dbc
 import dash_html_components as html
 from dash.dependencies import Output, Input, State
 from dash.exceptions import PreventUpdate
-from tilosutils import data_io
 
+from data_io.readwrite_files import write_lines, read_lines
 from subtitles_app.app import app
 from subtitles_app.common import get_letters_csv, raw_transcript_name, get_store_data
 from subtitles_app.subtitles_table import process_button
@@ -50,18 +50,18 @@ def create_or_load_raw_transcript(video_file, model_name) -> str:
             model_name=model_name,
         ).init()
         transcript = convert_to_wav_transcribe(asr, str(file))
-        data_io.write_lines(
+        write_lines(
             get_letters_csv(video_file, model_name),
             [f"{l.letter}\t{l.r_idx}" for l in transcript.letters],
         )
 
         raw_transcript = "".join([l.letter for l in transcript.letters])
-        data_io.write_lines(
+        write_lines(
             raw_transcript_file,
             [raw_transcript],
         )
     else:
-        raw_transcript = list(data_io.read_lines(raw_transcript_file))[0]
+        raw_transcript = list(read_lines(raw_transcript_file))[0]
     return raw_transcript
 
 

@@ -7,7 +7,7 @@ import dash_html_components as html
 import dash_table
 from dash.dependencies import Output, Input, State, ALL
 from dash.exceptions import PreventUpdate
-from tilosutils import data_io
+from data_io.readwrite_files import write_json
 
 from subtitles_app.app import app
 from subtitles_app.common import get_letters_csv, build_json_name
@@ -44,7 +44,7 @@ def dump_to_disk_process_subtitles(n_clicks, video_file, texts, titles, model_na
             title: TranslatedTranscript(title, k, text)
             for k, (title, text) in enumerate(zip(titles, texts))
         }
-        data_io.write_json(
+        write_json(
             build_json_name(video_file, model_name),
             {name: asdict(v) for name, v in data.items()},
         )
