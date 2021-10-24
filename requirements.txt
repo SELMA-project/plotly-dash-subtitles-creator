@@ -1,22 +1,23 @@
-data_io@git+https://github.com/dertilo/tilospolylith.git@main#subdirectory=data_io&egg=data_io
+# following should already be installed in system-site-packages
+#llvmlite==0.36.0 # otherwise it complains
+#librosa
+#numba==0.53.1 # TODO: wtf!
+#numpy
+#pandas
+#nemo-toolkit[asr]==1.3.0 # TODO: must go away!
+
 dash
 dash-auth
 ansi2html
-tqdm
 dash-renderer
-llvmlite==0.36.0 # otherwise it complains
-librosa
 dash_html_components
 dash_bootstrap_components
 dash-pivottable
 plotly
 dash_core_components
 dash_table
-numba==0.53.1 # TODO: wtf!
-numpy
 diff_match_patch
 editdistance
-pandas
 hydra_core
 tqdm
 pysubs2
